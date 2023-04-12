@@ -1,13 +1,20 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
-import Currency from "react-currency-formatter";
 
 function Product({ id, title, price, description, category, image }) {
   const MAX_RATING = 5;
   const MIN_RATING = 1;
   const [rating, setRating] = useState(0);
   const [hasPrime, setHasPrime] = useState(true);
+
+  const currencyValue = price;
+  const currencyCode = "USD";
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: currencyCode,
+  });
+  const formattedCurrency = formatter.format(currencyValue);
 
   useEffect(() => {
     setRating(
@@ -38,13 +45,15 @@ function Product({ id, title, price, description, category, image }) {
           ))}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
-      <div className="mb-5">
-        <Currency quantity={price} currency="GBP" />
-      </div>
+      <div className="mb-5">{formattedCurrency}</div>
 
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
-          <img className="w-12" src="https://links.papareact.com/fdw" alt="Prime" />
+          <img
+            className="w-12"
+            src="https://links.papareact.com/fdw"
+            alt="Prime"
+          />
           <p className="text-xs text-gray-500">Free Next-day Delivery</p>
         </div>
       )}

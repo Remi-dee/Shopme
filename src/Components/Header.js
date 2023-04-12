@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { signIn, signOut, userSession } from "next-auth/react";
+
 import {
   Bars3Icon,
   ShoppingCartIcon,
@@ -30,7 +32,7 @@ function Header() {
         </div>
         {/* Right bar */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
+          <div onClick={signIn} className="link">
             <p>Hello Danny</p>
             <p className="font-extrabold  md:text-sm">Account & Lists</p>
           </div>

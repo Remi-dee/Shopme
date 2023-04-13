@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { signIn, signOut, userSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from 'next/router'
 
 import {
   Bars3Icon,
@@ -8,13 +9,15 @@ import {
 } from "@heroicons/react/24/outline";
 
 function Header() {
+  const { data: session } = useSession();
+ const router = useRouter()
   return (
     <header>
       {/* Top Nav */}
       <div className="flex items-center  bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 px-4 flex items-center flex-grow sm:flex-grow-0">
           <Image
-            src="https://links.papareact.com/f90"
+             onClick= {() => router.push("/")} src="https://links.papareact.com/f90"
             width={130}
             height={40}
             objectFit="contain"
@@ -32,8 +35,13 @@ function Header() {
         </div>
         {/* Right bar */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div onClick={signIn} className="link">
-            <p>Hello Danny</p>
+          <div
+            onClick={!session ? signIn : signOut}
+            className="cursor-pointer link"
+          >
+            <p className="hover:underline">
+              {session ? `Hello, ${session.user.email}` : "Sign in"}
+            </p>
             <p className="font-extrabold  md:text-sm">Account & Lists</p>
           </div>
 
@@ -46,7 +54,7 @@ function Header() {
             <span className="absolute top-2 right-4 md:right-11 font-bold text-yellow-400">
               4
             </span>
-            <ShoppingCartIcon className="h-10" />
+            <ShoppingCartIcon onClick= {() => router.push("/checkout")} className="h-10" />
             <p className="hidden md:inline font-extrabold  md:text-sm mt-5">
               Cart
             </p>

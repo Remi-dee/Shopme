@@ -1,13 +1,19 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { useDispatch } from "react-redux";
+import { addTocart } from "@/slices/cartSlice";
 
 function Product({ id, title, price, description, category, image }) {
+  // assign useDispatch hook to variable (dispatch)
+  const dispatch = useDispatch();
+
   const MAX_RATING = 5;
   const MIN_RATING = 1;
   const [rating, setRating] = useState(0);
   const [hasPrime, setHasPrime] = useState(true);
 
+  //Format currency
   const currencyValue = price;
   const currencyCode = "USD";
   const formatter = new Intl.NumberFormat("en-US", {
@@ -16,6 +22,23 @@ function Product({ id, title, price, description, category, image }) {
   });
   const formattedCurrency = formatter.format(currencyValue);
 
+  //Add product as item to cart in redux store
+  const addItemToCart = () => {
+    const product = {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      category,
+      image,
+      hasPrime,
+    };
+    //Dispatch the product as item to redux store
+    dispatch(addTocart(product));
+  };
+
+  //Prevent hydration error with useffect
   useEffect(() => {
     setRating(
       Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
@@ -41,7 +64,7 @@ function Product({ id, title, price, description, category, image }) {
         {Array(rating)
           .fill()
           .map((_, i) => (
-            <StarIcon className="h-5 text-yellow-500" />
+            <StarIcon key={i} className="h-5 text-yellow-500" />
           ))}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
@@ -58,7 +81,9 @@ function Product({ id, title, price, description, category, image }) {
         </div>
       )}
 
-      <button className="mt-auto button">Add to Cart</button>
+      <button onClick={addItemToCart} className="mt-auto button">
+        Add to Cart
+      </button>
     </div>
   );
 }

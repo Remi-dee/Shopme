@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
       } else {
         //We dont have it
         console.warn(
-          `Can't remove product (id: ${action.payload.id}) as it is not in cart!`
+          `Can&apos;t remove product (id: ${action.payload.id}) as it is not in cart!`
         );
       }
 

@@ -80,7 +80,7 @@ function Header() {
         </p>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
-        <p className="link">Today's Deal</p>
+        <p className="link">Today&apos;s Deal</p>
         <p className="link hidden lg:inline-flex">Electronics</p>
         <p className="link hidden lg:inline-flex">Food & Gorcery</p>
         <p className="link hidden lg:inline-flex">Prime</p>

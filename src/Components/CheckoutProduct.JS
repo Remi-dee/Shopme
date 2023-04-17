@@ -1,4 +1,4 @@
-import { removeFromcart } from "@/slices/cartSlice";
+import { removeFromCart } from "@/slices/cartSlice";
 import { StarIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
@@ -23,7 +23,7 @@ function CheckoutProduct({
   const dispatch = useDispatch();
   const removeItemFromCart = () => {
     //Remove the product item from redux store
-    dispatch(removeFromcart({ id }));
+    dispatch(removeFromCart({ id }));
   };
 
   return (
@@ -36,8 +36,8 @@ function CheckoutProduct({
         objectFit="contain"
         alt="Product"
       />
-      {/*Product medium*/}
-      <div className="col-span-3 mx-5">
+      {/*Product middle*/}
+      <div className=" col-span-3 mx-5">
         <p>{title}</p>
         <div className="flex">
           {Array(rating)
@@ -63,7 +63,7 @@ function CheckoutProduct({
 
       {/*Product Right*/}
       <div>
-        <button onClick={removeItemFromCart} className="button">
+        <button onClick={removeItemFromCart} className="button ">
           Remove from Cart
         </button>
       </div>

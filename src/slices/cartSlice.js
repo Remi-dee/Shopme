@@ -18,8 +18,10 @@ export const cartSlice = createSlice({
       let newCart = [...state.items];
 
       if (index >= 0) {
+        //We have the requested item
         newCart.splice(index, 1);
       } else {
+        //We dont have it
         console.warn(
           `Can't remove product (id: ${action.payload.id}) as it is not in cart!`
         );
@@ -31,9 +33,14 @@ export const cartSlice = createSlice({
 });
 
 //Here is how to make actions to the cart in this case add or remove cart
-export const { addTocart, removeFromcart } = cartSlice.actions;
+export const { addTocart, removeFromCart } = cartSlice.actions;
 
-// Selectors - Selector helps to pull item from the Global store slice
+//Selectors
+// Selector - Selector helps to pull item from the Global store slice
 export const selectItems = (state) => state.cart.items;
+
+//Selector
+export const selectTotal = (state) =>
+  state.cart.items.reduce((total, item) => total + item.price, 0);
 
 export default cartSlice.reducer;

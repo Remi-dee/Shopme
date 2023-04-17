@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Product from "./Product";
 
 function ProductZone({ products }) {
@@ -16,11 +17,16 @@ function ProductZone({ products }) {
             image={image}
           />
         ))}
-      <img
+
+      <Image
         className="md:col-span-full"
         src="https://links.papareact.com/dyz"
+        width={1500}
+        height={0}
+        objectFit="contain"
         alt="Advert"
       />
+
       <div className=" md:col-span-2">
         {products
           .slice(4, 5)

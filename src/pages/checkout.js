@@ -28,6 +28,7 @@ function Checkout() {
             src="https://links.papareact.com/ikj"
             width={1020}
             height={250}
+            alt="Checkout product"
             objectFit="contain"
             className="cursor-pointer"
           />

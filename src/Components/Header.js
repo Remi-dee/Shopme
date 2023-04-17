@@ -1,17 +1,28 @@
 import Image from "next/image";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+
 import {
   Bars3Icon,
   ShoppingCartIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import { useSelector } from "react-redux";
+import { selectItems } from "@/slices/cartSlice";
+
 
 function Header() {
+  const { data: session } = useSession();
+  const router = useRouter();
+  const items = useSelector(selectItems);
+
   return (
     <header>
       {/* Top Nav */}
       <div className="flex items-center  bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 px-4 flex items-center flex-grow sm:flex-grow-0">
           <Image
+            onClick={() => router.push("/")}
             src="https://links.papareact.com/f90"
             width={130}
             height={40}
@@ -30,21 +41,29 @@ function Header() {
         </div>
         {/* Right bar */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
-            <p>Hello Danny</p>
+          <div
+            onClick={!session ? signIn : signOut}
+            className="cursor-pointer link"
+          >
+            <p className="hover:underline">
+              {session ? `Hello, ${session.user.email}` : "Sign in"}
+            </p>
             <p className="font-extrabold  md:text-sm">Account & Lists</p>
           </div>
-
           <div className="link">
             <p>Returns</p>
             <p className="font-extrabold  md:text-sm">Orders</p>
           </div>
 
+          {/*carticon*/}
           <div className="relative link flex items-center">
             <span className="absolute top-2 right-4 md:right-11 font-bold text-yellow-400">
-              4
+              {items.length}
             </span>
-            <ShoppingCartIcon className="h-10" />
+            <ShoppingCartIcon
+              onClick={() => router.push("/checkout")}
+              className="h-10"
+            />
             <p className="hidden md:inline font-extrabold  md:text-sm mt-5">
               Cart
             </p>

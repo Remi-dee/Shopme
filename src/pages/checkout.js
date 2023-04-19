@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import CheckoutProduct from "@/Components/CheckoutProduct";
 
-
 import { useSession } from "next-auth/react";
 
 function Checkout() {

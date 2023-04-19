@@ -2,7 +2,9 @@ import Header from "@/Components/Header";
 import { selectItems, selectTotal } from "@/slices/cartSlice";
 import Image from "next/image";
 import { useSelector } from "react-redux";
-import CheckoutProduct from "@/Components/CheckoutProduct";
+{
+  /*import CheckoutProduct from "@/Components/CheckoutProduct";*/
+}
 import { useSession } from "next-auth/react";
 
 function Checkout() {
@@ -40,7 +42,7 @@ function Checkout() {
                 : "Your Shopzone Cart is Empty"}
             </h1>
 
-            {items.map((item, i) => (
+            {/*{items.map((item, i) => (
               <CheckoutProduct
                 key={i}
                 id={item.id}
@@ -52,7 +54,7 @@ function Checkout() {
                 image={item.image}
                 hasPrime={item.hasPrime}
               />
-            ))}
+            ))}*/}
           </div>
         </div>
         {/*right division*/}

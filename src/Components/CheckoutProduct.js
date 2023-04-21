@@ -65,7 +65,7 @@ function CheckoutProduct({
       {/*Product Right*/}
       <div>
         <button onClick={removeItemFromCart} className="button ">
-          Remove from Cart
+          Remove from the Cart
         </button>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useState } from "react";
+import {useLayoutEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux";
 import { addTocart } from "@/slices/cartSlice";

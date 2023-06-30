@@ -7,22 +7,26 @@ Shopzone is an e-commerce application built with Next.js, Tailwind CSS, Hero Ico
 ## Features
 
 ## MVP
+
  - [x] User registration and authentication
+       
  - [x] Browse and search products
+
  - [x] Add products to the cart
 
- Checkout process with Stripe payment integration
- Order history and user profile management
-
+ - [x] Checkout process with Stripe payment integration
+       
 ## Post MVP
  - [ ] Manage cart (update quantities, remove items)
  
- Product recommendations based on user preferences and browsing history
+ - [ ] Order history and user profile management
+
+- [ ] Product recommendations based on user preferences and browsing history
  Wishlist functionality
  Product reviews and ratings
  Social media sharing and integration
  Admin panel for managing products, orders, and users
-Getting Started
+Getting Startedq
 
 To run the Shopzone application locally, follow these steps:
 

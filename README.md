@@ -1,38 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shopzone App
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Shopzone is an e-commerce application built with Next.js, Tailwind CSS, Hero Icons, and Stripe API for payment integration. It provides users with the ability to explore products, add them to the cart, and successfully complete the checkout process. Shopzone aims to deliver a seamless shopping experience to users, allowing them to discover and purchase products with ease.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## MVP
+ - [x] User registration and authentication
+ - [x] Browse and search products
+ - [x] Add products to the cart
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ Checkout process with Stripe payment integration
+ Order history and user profile management
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Post MVP
+ - [ ] Manage cart (update quantities, remove items)
+ 
+ Product recommendations based on user preferences and browsing history
+ Wishlist functionality
+ Product reviews and ratings
+ Social media sharing and integration
+ Admin panel for managing products, orders, and users
+Getting Started
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To run the Shopzone application locally, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Clone the repository to your local machine.
+Install the required dependencies by running npm install in the project directory.
+Configure the environment variables for Stripe API integration. Create a .env.local file in the root directory and add the following variables:
+makefile
+Copy code
+NEXT_PUBLIC_STRIPE_API_KEY=<your_stripe_api_key>
+Replace <your_stripe_api_key> with your own Stripe API key.
+Start the development server by running npm run dev in the project directory.
+Open your web browser and navigate to http://localhost:3000 to access the Shopzone app.
+Technology Stack
 
-## Learn More
+The Shopzone app is built using the following technologies:
 
-To learn more about Next.js, take a look at the following resources:
+Next.js: Next.js is a React framework that provides server-side rendering, automatic code splitting, and simple API routes. It allows for efficient development of scalable and optimized web applications.
+Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides a set of pre-built CSS classes to rapidly build custom user interfaces. It offers a flexible and responsive design system for creating modern and visually appealing websites.
+Hero Icons: Hero Icons is a set of free SVG icons designed by Steve Schoger. It provides a comprehensive collection of icons that can be easily customized and used in web projects.
+Stripe API: Stripe API is a powerful payment processing platform that allows developers to integrate secure and reliable payment functionality into their applications. It provides a wide range of features for handling payments, subscriptions, and more.
+The combination of Next.js, Tailwind CSS, Hero Icons, and Stripe API offers a robust and efficient tech stack for building a high-performance e-commerce application like Shopzone.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Folder Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The Shopzone repository follows a specific folder structure to organize the codebase effectively:
 
-## Deploy on Vercel
+/components: Contains reusable React components used throughout the application.
+/pages: Contains the Next.js pages that define the different routes and views of the application.
+/public: Contains static assets, such as images and fonts, that are served by Next.js.
+/styles: Contains global styles, utility classes, and Tailwind CSS configuration.
+/lib: Contains utility functions, API clients, and other helper modules.
+/data: Contains mock data used for development and testing.
+/constants: Contains constant values and configurations used throughout the application.
+/tests: Contains test files and suites for automated testing.
+API Integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The Shopzone app integrates with the Stripe API to handle payments. The following API endpoints are used:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+POST /api/checkout/session: Creates a new Stripe Checkout session for initiating the payment process.
+`POST /api/

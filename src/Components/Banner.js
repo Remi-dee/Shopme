@@ -14,6 +14,20 @@ function Banner() {
         showThumbs={false}
         interval={5000}
       >
+       
+       <div>
+          <Image
+            loading="lazy"
+            src= "https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+       
+      
         <div>
           <Image
             loading="lazy"
@@ -37,6 +51,43 @@ function Banner() {
             alt="Banner 1"
           />
         </div>
+
+        <div>
+          <Image
+            loading="lazy"
+            src= "https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+        
+        <div>
+          <Image
+            loading="lazy"
+            src= "https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
+        <div>
+          <Image
+            loading="lazy"
+            src= "https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
         <div>
           <Image
             loading="lazy"

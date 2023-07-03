@@ -17,6 +17,18 @@ function Banner() {
         <div>
           <Image
             loading="lazy"
+            src="https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
+        <div>
+          <Image
+            loading="lazy"
             src="https://links.papareact.com/gi1"
             width={1000}
             height={500}

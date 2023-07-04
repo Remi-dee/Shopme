@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {useLayoutEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux";
 import { addTocart } from "@/slices/cartSlice";
@@ -39,7 +39,7 @@ function Product({ id, title, price, description, category, image }) {
   };
 
   //Prevent hydration error with useffect
-  useLayoutEffect(() => {
+  useEffect(() => {
     setRating(
       Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
     );
@@ -52,7 +52,7 @@ function Product({ id, title, price, description, category, image }) {
         {category}
       </p>
       <Image
-        src={image}
+ src={image}
         height={200}
         width={200}
         style={{ objectFit: "contain" }}

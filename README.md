@@ -38,11 +38,11 @@ To run the Shopzone application locally, follow these steps:
 - Create a .env.local file in the root directory and add the following variables:
 makefile
 
-Copy code
+- Copy code
 NEXT_PUBLIC_STRIPE_API_KEY=<your_stripe_api_key>
-Replace <your_stripe_api_key> with your own Stripe API key.
-Start the development server by running npm run dev in the project directory.
-Open your web browser and navigate to http://localhost:3000 to access the Shopzone app.
+- Replace <your_stripe_api_key> with your own Stripe API key.
+- Start the development server by running npm run dev in the project directory.
+- Open your web browser and navigate to http://localhost:3000 to access the Shopzone app.
 
 ## Technology Stack
 The Shopzone app is built using the following technologies:

@@ -71,7 +71,7 @@ The Shopzone repository follows a specific folder structure to organize the code
 
 
   
-API Integration
+### API Integration
 
 The Shopzone app integrates with the Stripe API to handle payments. The following API endpoints are used:
 

@@ -15,6 +15,11 @@ module.exports = {
           light: "#232F3E",
           DEFAULT: "#131921",
         },
+
+        amazon_yellow: {
+          light: "#FEBD69",
+          DEFAULT: "#FEBD69",
+        },
       },
     },
   },

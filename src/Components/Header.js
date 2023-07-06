@@ -10,7 +10,6 @@ import {
 import { useSelector } from "react-redux";
 import { selectItems } from "@/slices/cartSlice";
 
-
 function Header() {
   const { data: session } = useSession();
   const router = useRouter();
@@ -33,7 +32,7 @@ function Header() {
         </div>
 
         {/* Search Bar */}
-        <div className=" hidden sm:flex m-l-2 bg-yellow-400 h-10 rounded-md flex-grow cursor-pointer items-center hover:bg-yellow-500">
+        <div className=" hidden sm:flex m-l-2 bg-amazon_yellow h-10 rounded-md flex-grow cursor-pointer items-center hover:bg-yellow-500">
           <input
             className="p-4 h-full w-6 flex-grow rounded-l-md focus:outline-none"
             type="text"

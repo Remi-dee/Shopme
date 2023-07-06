@@ -2,7 +2,11 @@
 
 ## Overview
 
-Shopzone is an e-commerce application built with Next.js, Tailwind CSS, Hero Icons, and Stripe API for payment integration. It provides users with the ability to explore products, add them to the cart, and successfully complete the checkout process. Shopzone aims to deliver a seamless shopping experience to users, allowing them to discover and purchase products with ease.
+Shopzone is a light weight amazon look like e-commerce website built with Next.js, Tailwind CSS, Hero Icons, and Stripe API for payment integration. It provides users with the ability to explore products, add them to the cart, and successfully complete the checkout process. Shopzone aims to deliver a seamless shopping experience to users, allowing them to discover and purchase products with ease.
+
+## Demo
+![Amazone Clone Demo4](https://github.com/Remi-dee/Shop-zone/assets/96704300/1211eb38-6062-4254-bccf-3e684bca0db3)
+
 
 ## Features
 

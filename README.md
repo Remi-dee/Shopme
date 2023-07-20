@@ -30,8 +30,22 @@ Shopzone is a light weight amazon look like e-commerce website built with Next.j
 - [ ] Product reviews and ratings
 
 ## Getting Started
+### Test Sign in Account
+You can use the following test Gmail account to sign in to the app:
 
-To run the Shopzone application locally, follow these steps:
+Email: testportfolio247@gmail.com
+Password: testpassword247
+Please note that this is a test account, and it is only meant for demonstration purposes. Do not use any personal or sensitive information with this account.
+
+To sign in with the test Gmail account, follow these steps:
+
+Click on the "Sign In" button on the app's homepage and click on "Sign in with google".
+Enter the provided email (testportfolio247@gmail.com) and password (testportfolio247) in the google sign in form.
+Click on the "Sign In" button to log in to the app.
+Please ensure that you do not commit the test account credentials to version control systems like GitHub to avoid exposing the account to the public.
+
+
+### To run the Shopzone application locally, follow these steps:
 
 - Clone the repository to your local machine.
 
@@ -81,4 +95,4 @@ The Shopzone app integrates with the Stripe API to handle payments. The followin
 
 POST /api/checkout/session: Creates a new Stripe Checkout session for initiating the payment process.
 
-`POST /api/
+`POST /api/webhooks: a webhook enpoint that connects stripe to firebase fire store

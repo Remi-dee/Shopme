@@ -45,7 +45,7 @@ function Header() {
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
           >
-            <p className="hover:underline w-8">
+            <p className="hover:underline sm:w-">
               {session ? `Hello, ${session.user.email}` : "Sign in"}
             </p>
             <p className="font-extrabold  md:text-sm">Account & Lists</p>

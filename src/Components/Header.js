@@ -7,13 +7,17 @@ import {
   ShoppingCartIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "@/slices/cartSlice";
+import { selectString, setSearchString } from "@/slices/productSlice";
 
 function Header() {
   const { data: session } = useSession();
   const router = useRouter();
   const items = useSelector(selectItems);
+
+  const dispatch = useDispatch();
+  const searchString = useSelector(selectString);
 
   return (
     <header>
@@ -36,7 +40,10 @@ function Header() {
           <input
             className="p-4 h-full w-6 flex-grow rounded-l-md focus:outline-none"
             type="text"
+            value={searchString}
+            onChange={(e) => dispatch(setSearchString(e.target.value))}
           />
+
           <MagnifyingGlassIcon className="h-12 p-4" />
         </div>
         {/* Right bar */}
@@ -45,9 +52,10 @@ function Header() {
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
           >
-            console.log(session.user)
             <p className="hover:underline max-w-4 ">
-              {session ? `Hello, ${session.user.email}` : "Sign in"}
+              {session
+                ? `Hello, ${session.user.email.split("@")[0]}`
+                : "Sign in"}
             </p>
             <p className="font-extrabold  md:text-xs">Account & Lists</p>
           </div>
@@ -81,7 +89,10 @@ function Header() {
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
         <p className="link">Today&apos;s Deal</p>
-        <p className="link hidden lg:inline-flex">Electronics</p>
+        <button>
+          
+          <p className="link hidden lg:inline-flex">Electronics</p>
+        </button>
         <p className="link hidden lg:inline-flex">Food & Gorcery</p>
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>

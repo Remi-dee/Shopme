@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   items: [],
+  
 };
 
 export const cartSlice = createSlice({
@@ -29,11 +30,13 @@ export const cartSlice = createSlice({
 
       state.items = newCart;
     },
+
+   
   },
 });
 
 //Here is how to make actions to the cart in this case add or remove cart
-export const { addTocart, removeFromCart } = cartSlice.actions;
+export const { addTocart, removeFromCart,  } = cartSlice.actions;
 
 //Selectors
 // Selector - Selector helps to pull item from the Global store slice

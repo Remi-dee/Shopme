@@ -45,6 +45,7 @@ function Header() {
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
           >
+            console.log(user)
             <p className="hover:underline max-w-4 ">
               {session ? `Hello, ${session.user.email}` : "Sign in"}
             </p>

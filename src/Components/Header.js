@@ -45,10 +45,10 @@ function Header() {
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
           >
-            <p className="hover:underline sm:w-">
+            <p className="hover:underline max-w-4 ">
               {session ? `Hello, ${session.user.email}` : "Sign in"}
             </p>
-            <p className="font-extrabold  md:text-sm">Account & Lists</p>
+            <p className="font-extrabold  md:text-xs">Account & Lists</p>
           </div>
           <div className="link">
             <p>Returns &</p>

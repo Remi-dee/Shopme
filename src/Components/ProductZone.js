@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Product from "./Product";
 import { useSelector } from "react-redux";
-import { selectCategory, selectString } from "@/slices/productSlice";
+import { selectCategory, selectSearchString, } from "@/slices/productSlice";
 
 function ProductZone({ products }) {
-  const searchString = useSelector(selectString);
+  const searchString = useSelector(selectSearchString);
   const category = useSelector(selectCategory);
   // Filter products based on the search string
   const filteredProducts = products.filter(

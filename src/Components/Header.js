@@ -10,7 +10,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "@/slices/cartSlice";
 import {
-  selectString,
+  selectSearchString,
+  
   setSearchString,
   setSelectedCategory,
 } from "@/slices/productSlice";
@@ -21,7 +22,7 @@ function Header() {
   const items = useSelector(selectItems);
 
   const dispatch = useDispatch();
-  const searchString = useSelector(selectString);
+  const searchString = useSelector(selectSearchString);
 
   const categories = [
     { name: "Electronics", style: "link" },

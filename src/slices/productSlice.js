@@ -21,7 +21,7 @@ export const productSlice = createSlice({
 
 export const { setSearchString, setSelectedCategory } = productSlice.actions;
 
-export const selectString = (state) => state.product.searchString;
+export const selectSearchString = (state) => state.product.searchString;
 export const selectCategory = (state) => state.product.category;
 
 export default productSlice.reducer;

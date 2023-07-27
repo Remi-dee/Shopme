@@ -7,14 +7,33 @@ import {
   ShoppingCartIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "@/slices/cartSlice";
-
+import {
+  selectSearchString,
+  
+  setSearchString,
+  setSelectedCategory,
+} from "@/slices/productSlice";
 
 function Header() {
   const { data: session } = useSession();
   const router = useRouter();
   const items = useSelector(selectItems);
+
+  const dispatch = useDispatch();
+  const searchString = useSelector(selectSearchString);
+
+  const categories = [
+    { name: "Electronics", style: "link" },
+    { name: "Men's Clothing", style: "link hidden lg:inline-flex" },
+    { name: "Women's Clothing", style: "link" },
+    { name: "jewelery", style: "link" },
+  ];
+
+  const handleCategoryClick = (category) => {
+    dispatch(setSelectedCategory(category.toLowerCase()));
+  };
 
   return (
     <header>
@@ -33,11 +52,14 @@ function Header() {
         </div>
 
         {/* Search Bar */}
-        <div className=" hidden sm:flex m-l-2 bg-yellow-400 h-10 rounded-md flex-grow cursor-pointer items-center hover:bg-yellow-500">
+        <div className=" hidden sm:flex m-l-2 bg-amazon_yellow h-10 rounded-md flex-grow cursor-pointer items-center hover:bg-yellow-500">
           <input
             className="p-4 h-full w-6 flex-grow rounded-l-md focus:outline-none"
             type="text"
+            value={searchString}
+            onChange={(e) => dispatch(setSearchString(e.target.value))}
           />
+
           <MagnifyingGlassIcon className="h-12 p-4" />
         </div>
         {/* Right bar */}
@@ -46,10 +68,12 @@ function Header() {
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
           >
-            <p className="hover:underline">
-              {session ? `Hello, ${session.user.email}` : "Sign in"}
+            <p className="hover:underline max-w-4 ">
+              {session
+                ? `Hello, ${session.user.email.split("@")[0]}`
+                : "Sign in"}
             </p>
-            <p className="font-extrabold  md:text-sm">Account & Lists</p>
+            <p className="font-extrabold  md:text-xs">Account & Lists</p>
           </div>
           <div className="link">
             <p>Returns &</p>
@@ -78,11 +102,23 @@ function Header() {
           <Bars3Icon className="h-6 mr-1 " />
           All
         </p>
-        <p className="link">Prime Video</p>
-        <p className="link">Amazon Business</p>
-        <p className="link">Today&apos;s Deal</p>
-        <p className="link hidden lg:inline-flex">Electronics</p>
-        <p className="link hidden lg:inline-flex">Food & Gorcery</p>
+
+        {categories.map((categoryObj) => (
+          <div
+            key={categoryObj.name}
+            onClick={() => handleCategoryClick(categoryObj.name)}
+            className="cursor-pointer link"
+          >
+            <p className={categoryObj.style}>{categoryObj.name}</p>
+            {/* You can add the corresponding subtitle or other elements for each category */}
+          </div>
+        ))}
+
+        <p className="link hidden lg:inline-flex">Prime Video</p>
+        <p className="link hidden lg:inline-flex">Amazon Business</p>
+        <p className="link hidden lg:inline-flex">Today&apos;s Deal</p>
+
+        <p className="link hidden lg:inline-flex ">Food & Gorcery</p>
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>
         <p className="link hidden lg:inline-flex">Shopper Toolkit</p>

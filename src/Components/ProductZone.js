@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Product from "./Product";
 import { useSelector } from "react-redux";
-import { selectString } from "@/slices/productSlice";
+import { selectCategory, selectString } from "@/slices/productSlice";
 
 function ProductZone({ products }) {
   const searchString = useSelector(selectString);
-
+  const category = useSelector(selectCategory);
   // Filter products based on the search string
   const filteredProducts = products.filter(
     (product) =>
@@ -14,15 +14,13 @@ function ProductZone({ products }) {
 
   // Filter products based on the selected category
   const categoryFilteredProducts =
-    selectedCategory === null
+    category === null
       ? filteredProducts
-      : filteredProducts.filter(
-          (product) => product.category === selectedCategory
-        );
+      : filteredProducts.filter((product) => product.category === category);
 
   return (
     <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52 mx-auto">
-      {products
+      {categoryFilteredProducts
         .slice(0, 4)
         .map(({ id, title, price, description, category, image }) => {
           if (searchString && !title.toLowerCase().includes(searchString)) {
@@ -53,7 +51,7 @@ function ProductZone({ products }) {
         />
       )}
       <div className=" md:col-span-2">
-        {products
+        {categoryFilteredProducts
           .slice(4, 5)
           .map(({ id, title, price, description, category, image }) => {
             if (searchString && !title.toLowerCase().includes(searchString)) {
@@ -74,7 +72,7 @@ function ProductZone({ products }) {
           })}
       </div>
 
-      {products
+      {categoryFilteredProducts
         .slice(5, products.length)
         .map(({ id, title, price, description, category, image }) => {
           if (searchString && !title.toLowerCase().includes(searchString)) {

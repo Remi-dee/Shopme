@@ -9,7 +9,11 @@ import {
 } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "@/slices/cartSlice";
-import { selectString, setSearchString } from "@/slices/productSlice";
+import {
+  selectString,
+  setSearchString,
+  setSelectedCategory,
+} from "@/slices/productSlice";
 
 function Header() {
   const { data: session } = useSession();
@@ -18,6 +22,17 @@ function Header() {
 
   const dispatch = useDispatch();
   const searchString = useSelector(selectString);
+
+  const categories = [
+    { name: "Electronics", style: "link" },
+    { name: "Men's Clothing", style: "link hidden lg:inline-flex" },
+    { name: "Women's Clothing", style: "link" },
+    { name: "jewelery", style: "link" },
+  ];
+
+  const handleCategoryClick = (category) => {
+    dispatch(setSelectedCategory(category.toLowerCase()));
+  };
 
   return (
     <header>
@@ -86,14 +101,23 @@ function Header() {
           <Bars3Icon className="h-6 mr-1 " />
           All
         </p>
-        <p className="link">Prime Video</p>
-        <p className="link">Amazon Business</p>
-        <p className="link">Today&apos;s Deal</p>
-        <button>
-          
-          <p className="link hidden lg:inline-flex">Electronics</p>
-        </button>
-        <p className="link hidden lg:inline-flex">Food & Gorcery</p>
+
+        {categories.map((categoryObj) => (
+          <div
+            key={categoryObj.name}
+            onClick={() => handleCategoryClick(categoryObj.name)}
+            className="cursor-pointer link"
+          >
+            <p className={categoryObj.style}>{categoryObj.name}</p>
+            {/* You can add the corresponding subtitle or other elements for each category */}
+          </div>
+        ))}
+
+        <p className="link hidden lg:inline-flex">Prime Video</p>
+        <p className="link hidden lg:inline-flex">Amazon Business</p>
+        <p className="link hidden lg:inline-flex">Today&apos;s Deal</p>
+
+        <p className="link hidden lg:inline-flex ">Food & Gorcery</p>
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>
         <p className="link hidden lg:inline-flex">Shopper Toolkit</p>

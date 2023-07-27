@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   searchString: "",
-  setCategory: "",
+  category: null,
 };
 
 export const productSlice = createSlice({
@@ -14,14 +14,14 @@ export const productSlice = createSlice({
     },
 
     setSelectedCategory: (state, action) => {
-      state.setCategory = [...state.setCategory, action.payload];
+      state.category = action.payload;
     },
   },
 });
 
-export const { setSearchString } = productSlice.actions;
+export const { setSearchString, setSelectedCategory } = productSlice.actions;
 
 export const selectString = (state) => state.product.searchString;
-export const selectString = (state) => state.product.searchString;
+export const selectCategory = (state) => state.product.category;
 
 export default productSlice.reducer;

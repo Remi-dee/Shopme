@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import LOGO  from "../../public/assets/logo.png";
 
 import {
   Bars3Icon,
@@ -42,8 +43,8 @@ function Header() {
         <div className="mt-2 px-4 flex items-center flex-grow sm:flex-grow-0">
           <Image
             onClick={() => router.push("/")}
-            src="https://links.papareact.com/f90"
-            width={130}
+            src={LOGO}
+            width={250}
             height={40}
             objectFit="contain"
             className="cursor-pointer"

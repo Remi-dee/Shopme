@@ -90,7 +90,7 @@ function Product({ id, title, price, description, category, image }) {
           Add to Cart
         </button>
         <div className="relative link flex items-center">
-          <span className="text-xs absolute top-2 right-4 md:right-4 font-bold text-yellow-400">
+          <span className="text-xs absolute top-2 right-4 md:right-4 font-bold text-shopme_orange-default">
             {items.length}
           </span>
           <ShoppingCartIcon

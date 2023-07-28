@@ -16,9 +16,9 @@ module.exports = {
           DEFAULT: "#131921",
         },
 
-        amazon_yellow: {
-          light: "#FEBD69",
-          DEFAULT: "#FEBD69",
+        shopme_orange: {
+          light: "#F37E50",
+          default: "#F37E57",
         },
       },
     },

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import LOGO  from "../../public/assets/logo.png";
+import LOGO from "../../public/assets/logo.png";
 
 import {
   Bars3Icon,
@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "@/slices/cartSlice";
 import {
   selectSearchString,
-  
   setSearchString,
   setSelectedCategory,
 } from "@/slices/productSlice";
@@ -44,7 +43,7 @@ function Header() {
           <Image
             onClick={() => router.push("/")}
             src={LOGO}
-            width={250}
+            width={150}
             height={40}
             objectFit="contain"
             className="cursor-pointer"
@@ -53,7 +52,7 @@ function Header() {
         </div>
 
         {/* Search Bar */}
-        <div className=" hidden sm:flex m-l-2 bg-amazon_yellow h-10 rounded-md flex-grow cursor-pointer items-center hover:bg-yellow-500">
+        <div className=" hidden sm:flex m-l-2 bg-shopme_orange-light h-10 rounded-md flex-grow cursor-pointer items-center hover:bg-yellow-500">
           <input
             className="p-4 h-full w-6 flex-grow rounded-l-md focus:outline-none"
             type="text"
@@ -83,7 +82,7 @@ function Header() {
 
           {/*carticon*/}
           <div className="relative link flex items-center">
-            <span className="absolute top-2 right-4 md:right-11 font-bold text-yellow-400">
+            <span className="absolute top-2 right-4 md:right-11 font-bold text-shopme_orange-light">
               {items.length}
             </span>
             <ShoppingCartIcon
@@ -98,7 +97,7 @@ function Header() {
       </div>
 
       {/* Bottom Nav */}
-      <div className="flex items-start space-x-3 p-2 pl-6 bg-amazon_blue-light text-white">
+      <div className="flex items-start space-x-3 p-2 pl-6 bg-gray-400 text-black">
         <p className="flex items-center link">
           <Bars3Icon className="h-6 mr-1 " />
           All

@@ -97,7 +97,7 @@ function Header() {
       </div>
 
       {/* Bottom Nav */}
-      <div className="flex items-start space-x-3 p-2 pl-6 bg-gray-400 text-black">
+      <div className="flex items-start space-x-3 p-2 pl-6 bg-gray-200 text-black">
         <p className="flex items-center link">
           <Bars3Icon className="h-6 mr-1 " />
           All

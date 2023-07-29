@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Product from "./Product";
 import { useSelector } from "react-redux";
-import { selectCategory, selectSearchString, } from "@/slices/productSlice";
+import { selectCategory, selectSearchString } from "@/slices/productSlice";
+import ADVERT from "../../public/assets/advert.png";
 
 function ProductZone({ products }) {
   const searchString = useSelector(selectSearchString);
@@ -43,13 +44,14 @@ function ProductZone({ products }) {
       {!searchString && (
         <Image
           className="md:col-span-full"
-          src="https://links.papareact.com/dyz"
-          width={1500}
+          src={ADVERT}
+          width={1530}
           height={0}
           objectFit="contain"
           alt="Advert"
         />
       )}
+
       <div className=" md:col-span-2">
         {categoryFilteredProducts
           .slice(4, 5)
@@ -71,7 +73,16 @@ function ProductZone({ products }) {
             );
           })}
       </div>
-
+      {!searchString && (
+        <Image
+          className="md:col-span-full"
+          src="https://links.papareact.com/dyz"
+          width={1530}
+          height={0}
+          objectFit="contain"
+          alt="Advert"
+        />
+      )}
       {categoryFilteredProducts
         .slice(5, products.length)
         .map(({ id, title, price, description, category, image }) => {

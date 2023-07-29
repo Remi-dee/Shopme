@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import BANNER from "../../public/assets/banner2.png";
+import ADVERT from "../../public/assets/advert.png";
+
 
 function Banner() {
   return (
@@ -14,11 +17,10 @@ function Banner() {
         showThumbs={false}
         interval={5000}
       >
-       
-       <div>
+        <div>
           <Image
             loading="lazy"
-            src= "https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"
+            src="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"
             width={1000}
             height={500}
             objectFit="contain"
@@ -26,8 +28,19 @@ function Banner() {
             alt="Banner 1"
           />
         </div>
-       
-      
+
+        <div>
+          <Image
+            loading="lazy"
+            src={ADVERT}
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
         <div>
           <Image
             loading="lazy"
@@ -55,19 +68,7 @@ function Banner() {
         <div>
           <Image
             loading="lazy"
-            src= "https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg"
-            width={1000}
-            height={500}
-            objectFit="contain"
-            className="cursor-pointer"
-            alt="Banner 1"
-          />
-        </div>
-        
-        <div>
-          <Image
-            loading="lazy"
-            src= "https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg"
+            src={BANNER}
             width={1000}
             height={500}
             objectFit="contain"
@@ -79,7 +80,31 @@ function Banner() {
         <div>
           <Image
             loading="lazy"
-            src= "https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
+            src="https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
+        <div>
+          <Image
+            loading="lazy"
+            src="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
+        <div>
+          <Image
+            loading="lazy"
+            src="https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
             width={1000}
             height={500}
             objectFit="contain"

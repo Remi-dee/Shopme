@@ -1,13 +1,14 @@
 import Image from "next/image";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
-import { useDispatch } from "react-redux";
-import { addTocart } from "@/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addTocart, selectItems } from "@/slices/cartSlice";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 function Product({ id, title, price, description, category, image }) {
   // assign useDispatch hook to variable (dispatch)
   const dispatch = useDispatch();
-
+  const items = useSelector(selectItems);
   const MAX_RATING = 5;
   const MIN_RATING = 1;
   const [rating, setRating] = useState(0);
@@ -52,11 +53,12 @@ function Product({ id, title, price, description, category, image }) {
         {category}
       </p>
       <Image
- src={image}
+        src={image}
         height={200}
         width={200}
         style={{ objectFit: "contain" }}
         alt="Product"
+        className=" mx-auto "
       />
       <h4 className="my-3">{title}</h4>
 
@@ -83,10 +85,20 @@ function Product({ id, title, price, description, category, image }) {
           <p className="text-xs text-gray-500">Free Next-day Delivery</p>
         </div>
       )}
-
-      <button onClick={addItemToCart} className="mt-auto button">
-        Add to Cart
-      </button>
+      <div className="flex justify-between mt-auto">
+        <button onClick={addItemToCart} className="mt-auto button">
+          Add to Cart
+        </button>
+        <div className="relative link flex items-center">
+          <span className="text-xs absolute top-2 right-4 md:right-4 font-bold text-shopme_orange-default">
+            {items.length}
+          </span>
+          <ShoppingCartIcon
+            onClick={() => router.push("/checkout")}
+            className="h-10"
+          />
+        </div>
+      </div>
     </div>
   );
 }

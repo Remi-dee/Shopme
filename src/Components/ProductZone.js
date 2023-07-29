@@ -46,7 +46,7 @@ function ProductZone({ products }) {
       {!searchString && (
         <Image
           className="md:col-span-full mx-auto"
-          src={ADVERT}
+          src={KIT1}
           width={1500}
           height={0}
           objectFit="contain"

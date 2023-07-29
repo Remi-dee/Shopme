@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import BANNER from "../../public/assets/banner2.png";
 import ADVERT from "../../public/assets/advert.png";
 
+
 function Banner() {
   return (
     <div className="relative">

@@ -43,10 +43,10 @@ function Header() {
           <Image
             onClick={() => router.push("/")}
             src={LOGO}
-            width={150}
+            width={null}
             height={40}
             objectFit="contain"
-            className="cursor-pointer"
+            className="cursor-pointer w-[90px] md:w-[150px] "
             alt="Website Logo"
           />
         </div>
@@ -68,7 +68,7 @@ function Header() {
             onClick={!session ? signIn : signOut}
             className="cursor-pointer link"
           >
-            <p className="hover:underline max-w-4 ">
+            <p className="hover:underline max-w-4 break-all ">
               {session
                 ? `Hello, ${session.user.email.split("@")[0]}`
                 : "Sign in"}

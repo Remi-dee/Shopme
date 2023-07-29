@@ -3,6 +3,8 @@ import Product from "./Product";
 import { useSelector } from "react-redux";
 import { selectCategory, selectSearchString } from "@/slices/productSlice";
 import ADVERT from "../../public/assets/advert.png";
+import KIT1 from "../../public/assets/kit1.png";
+import KIT2 from "../../public/assets/kit2.png";
 
 function ProductZone({ products }) {
   const searchString = useSelector(selectSearchString);
@@ -43,9 +45,9 @@ function ProductZone({ products }) {
 
       {!searchString && (
         <Image
-          className="md:col-span-full"
+          className="md:col-span-full mx-auto"
           src={ADVERT}
-          width={1530}
+          width={1500}
           height={0}
           objectFit="contain"
           alt="Advert"
@@ -73,16 +75,20 @@ function ProductZone({ products }) {
             );
           })}
       </div>
+
       {!searchString && (
         <Image
-          className="md:col-span-full"
-          src="https://links.papareact.com/dyz"
-          width={1530}
+          className="md:col-span-full mx-auto cursor-select"
+          src={KIT2}
+          width={1500}
           height={0}
           objectFit="contain"
+
           alt="Advert"
+         
         />
       )}
+
       {categoryFilteredProducts
         .slice(5, products.length)
         .map(({ id, title, price, description, category, image }) => {
@@ -102,6 +108,17 @@ function ProductZone({ products }) {
             />
           );
         })}
+
+      {/* {!searchString && (
+        <Image
+          className="md:col-span-full"
+          src="https://links.papareact.com/dyz"
+          width={1530}
+          height={0}
+          objectFit="contain"
+          alt="Advert"
+        />
+      )} */}
     </div>
   );
 }

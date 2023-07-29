@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SHOPME from "../../public/assets/ShopMe.png";
+import ADVERT from "../../public/assets/advert.png";
 
 function Banner() {
   return (
@@ -30,8 +31,8 @@ function Banner() {
         <div>
           <Image
             loading="lazy"
-            src={SHOPME}
-            width={1000}
+            src={ADVERT}
+            width={null}
             height={500}
             objectFit="contain"
             className="cursor-pointer"

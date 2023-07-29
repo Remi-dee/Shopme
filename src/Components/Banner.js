@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import SHOPME from "../../public/assets/ShopMe.png";
+import BANNER from "../../public/assets/banner2.png";
 import ADVERT from "../../public/assets/advert.png";
 
 function Banner() {
@@ -32,7 +32,7 @@ function Banner() {
           <Image
             loading="lazy"
             src={ADVERT}
-            width={null}
+            width={1000}
             height={500}
             objectFit="contain"
             className="cursor-pointer"
@@ -56,6 +56,18 @@ function Banner() {
           <Image
             loading="lazy"
             src="https://links.papareact.com/gi1"
+            width={1000}
+            height={500}
+            objectFit="contain"
+            className="cursor-pointer"
+            alt="Banner 1"
+          />
+        </div>
+
+        <div>
+          <Image
+            loading="lazy"
+            src={BANNER}
             width={1000}
             height={500}
             objectFit="contain"

@@ -4,6 +4,7 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart, selectItems } from "@/slices/cartSlice";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/router";
 
 function Product({ id, title, price, description, category, image }) {
   // assign useDispatch hook to variable (dispatch)
@@ -13,7 +14,7 @@ function Product({ id, title, price, description, category, image }) {
   const MIN_RATING = 1;
   const [rating, setRating] = useState(0);
   const [hasPrime, setHasPrime] = useState(true);
-
+  const router = useRouter();
   //Format currency
   const currencyValue = price;
   const currencyCode = "USD";

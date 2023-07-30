@@ -8,7 +8,7 @@ import KIT2 from "../../public/assets/kit2.png";
 
 function ProductZone({ products }) {
   const searchString = useSelector(selectSearchString);
- 
+
   const category = useSelector(selectCategory);
   // Filter products based on the search string
   const filteredProducts = products.filter(
@@ -89,7 +89,27 @@ function ProductZone({ products }) {
       )}
 
       {categoryFilteredProducts
-        .slice(5, products.length)
+        .slice(8, 17)
+        .map(({ id, title, price, description, category, image }) => {
+          if (searchString && !title.toLowerCase().includes(searchString)) {
+            return null; // Skip rendering the component if the searchString doesn't match the title.
+          }
+
+          return (
+            <Product
+              key={id}
+              id={id}
+              title={title}
+              price={price}
+              description={description}
+              category={category}
+              image={image}
+            />
+          );
+        })}
+
+      {categoryFilteredProducts
+        .slice(5, 6)
         .map(({ id, title, price, description, category, image }) => {
           if (searchString && !title.toLowerCase().includes(searchString)) {
             return null; // Skip rendering the component if the searchString doesn't match the title.

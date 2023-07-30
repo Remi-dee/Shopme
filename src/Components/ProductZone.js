@@ -8,6 +8,7 @@ import KIT2 from "../../public/assets/kit2.png";
 
 function ProductZone({ products }) {
   const searchString = useSelector(selectSearchString);
+ 
   const category = useSelector(selectCategory);
   // Filter products based on the search string
   const filteredProducts = products.filter(
@@ -43,7 +44,7 @@ function ProductZone({ products }) {
           );
         })}
 
-      {!searchString && (
+      {!searchString && !category && (
         <Image
           className="md:col-span-full mx-auto"
           src={KIT1}
@@ -76,16 +77,14 @@ function ProductZone({ products }) {
           })}
       </div>
 
-      {!searchString && (
+      {!searchString && !category && (
         <Image
           className="md:col-span-full mx-auto cursor-select"
           src={KIT2}
           width={1500}
           height={0}
           objectFit="contain"
-
           alt="Advert"
-         
         />
       )}
 

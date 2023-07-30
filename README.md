@@ -32,6 +32,9 @@ Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for pa
  Wishlist functionality
 - [ ] Product reviews and ratings
 
+## App Flowchart
+![saveme3](https://github.com/Remi-dee/Shop-zone/assets/96704300/763ff74b-9a65-427d-ac50-6b9ee963aed0)
+
 ## Getting Started
 ### Test Sign in Account
 You can use the following test Gmail account to sign in to the app:

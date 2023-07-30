@@ -2,7 +2,8 @@
 
 ## Overview
 
-Shopzone is a light weight amazon look like e-commerce website built with Next.js, Tailwind CSS, Hero Icons, and Stripe API for payment integration. It provides users with the ability to explore products, add them to the cart, and successfully complete the checkout process. Shopzone aims to deliver a seamless shopping experience to users, allowing them to discover and purchase products with ease.
+Shopme is a light weight amazon look like e-commerce website that provides users with the ability to explore products, add them to cart, and successfully complete the checkout process. Shopme aims to deliver a seamless shopping experience to users, allowing them to discover and purchase products with ease.
+Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for payment integration. 
 
 ## Demo
 ![Amazone Clone Demo4](https://github.com/Remi-dee/Shop-zone/assets/96704300/1211eb38-6062-4254-bccf-3e684bca0db3)
@@ -17,6 +18,8 @@ Shopzone is a light weight amazon look like e-commerce website built with Next.j
  - [x] Browse and search products
 
  - [x] Add products to the cart
+       
+ - [x] Filter products
 
  - [x] Checkout process with Stripe payment integration
        
@@ -45,7 +48,7 @@ Click on the "Sign In" button to log in to the app.
 Please ensure that you do not commit the test account credentials to version control systems like GitHub to avoid exposing the account to the public.
 
 
-### To run the Shopzone application locally, follow these steps:
+### To run the Shopme application locally, follow these steps:
 
 - Clone the repository to your local machine.
 
@@ -73,7 +76,7 @@ The Shopzone app is built using the following technologies:
 
 - Stripe API: Stripe API is a powerful payment processing platform that allows developers to integrate secure and reliable payment functionality into their applications. It provides a wide range of features for handling payments, subscriptions, and more.
 
-#### The combination of Next.js, Tailwind CSS, Hero Icons, and Stripe API offers a robust and efficient tech stack for building a high-performance e-commerce application like Shopzone.
+#### The combination of Next.js, Tailwind CSS, Hero Icons, and Stripe API offers a robust and efficient tech stack for building a high-performance e-commerce application like Shopme.
 
 ## Folder Structure
 The Shopzone repository follows a specific folder structure to organize the codebase effectively:

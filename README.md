@@ -33,7 +33,8 @@ Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for pa
 - [ ] Product reviews and ratings
 
 ## App Flowchart
-![saveme3](https://github.com/Remi-dee/Shop-zone/assets/96704300/763ff74b-9a65-427d-ac50-6b9ee963aed0)
+![saveme4](https://github.com/Remi-dee/Shop-zone/assets/96704300/ad69298a-a88a-4866-bd68-6a5661a153f4)
+
 
 ## Getting Started
 ### Test Sign in Account

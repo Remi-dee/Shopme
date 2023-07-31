@@ -6,10 +6,15 @@ Shopme is a light weight amazon look like e-commerce website that provides users
 Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for payment integration. 
 
 ## Demo
-![Amazone Clone Demo4](https://github.com/Remi-dee/Shop-zone/assets/96704300/1211eb38-6062-4254-bccf-3e684bca0db3)
+### Browse Products & Add to cart
+![New shopme](https://github.com/Remi-dee/Shopme/assets/96704300/7033b760-0a09-4a67-8a95-67426864ae94)
 
+### Make Payment With Stripe
+![New shopme 2](https://github.com/Remi-dee/Shopme/assets/96704300/1464bcb6-3461-4d1d-9335-97f028b05e2f)
 
 ## Features
+
+
 
 ## MVP
 

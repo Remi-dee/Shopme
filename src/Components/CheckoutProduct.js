@@ -9,7 +9,7 @@ function CheckoutProduct({
   price,
   rating,
   description,
-  category,
+  
   image,
   hasPrime,
 }) {

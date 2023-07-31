@@ -41,7 +41,11 @@ function Header() {
       <div className="flex items-center  bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 px-4 flex items-center flex-grow sm:flex-grow-0">
           <Image
-            onClick={() => router.push("/")}
+            onClick={() => {
+              dispatch(setSelectedCategory(null));
+
+              router.push("/");
+            }}
             src={LOGO}
             width={null}
             height={40}
@@ -97,11 +101,11 @@ function Header() {
       </div>
 
       {/* Bottom Nav */}
-      <div className="flex items-start space-x-3 p-2 pl-6 bg-gray-200 text-black">
-        <p className="flex items-center link">
+      <div className="flex items-start space-x-3 p-2  bg-gray-200 text-black">
+        {/* <p className="flex items-center link">
           <Bars3Icon className="h-6 mr-1 " />
           All
-        </p>
+        </p> */}
 
         {categories.map((categoryObj) => (
           <div
@@ -114,7 +118,7 @@ function Header() {
           </div>
         ))}
 
-        <p className="link hidden lg:inline-flex">Prime Video</p>
+        {/* <p className="link hidden lg:inline-flex">Prime Video</p>
         <p className="link hidden lg:inline-flex">Amazon Business</p>
         <p className="link hidden lg:inline-flex">Today&apos;s Deal</p>
 
@@ -122,7 +126,7 @@ function Header() {
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>
         <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
-        <p className="link hidden lg:inline-flex">Health & Personal</p>
+        <p className="link hidden lg:inline-flex">Health & Personal</p> */}
       </div>
     </header>
   );

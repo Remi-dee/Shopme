@@ -32,6 +32,7 @@ function Header() {
   ];
 
   const handleCategoryClick = (category) => {
+    router.push("/")
     dispatch(setSelectedCategory(category.toLowerCase()));
   };
 

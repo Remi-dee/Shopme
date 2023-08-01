@@ -28,11 +28,11 @@ function Header() {
     { name: "Electronics", style: "link" },
     { name: "Men's Clothing", style: "link hidden lg:inline-flex" },
     { name: "Women's Clothing", style: "link" },
-    { name: "jewelery", style: "link" },
+    { name: "jewelery", style: "lin" },
   ];
 
   const handleCategoryClick = (category) => {
-    router.push("/")
+    router.push("/");
     dispatch(setSelectedCategory(category.toLowerCase()));
   };
 

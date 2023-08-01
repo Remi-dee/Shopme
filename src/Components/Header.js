@@ -28,7 +28,7 @@ function Header() {
     { name: "Electronics", style: "link" },
     { name: "Men's Clothing", style: "link hidden lg:inline-flex" },
     { name: "Women's Clothing", style: "link" },
-    { name: "jewelery", style: "lin" },
+    { name: "jewelery", style: "link" },
   ];
 
   const handleCategoryClick = (category) => {

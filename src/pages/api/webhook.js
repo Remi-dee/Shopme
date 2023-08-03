@@ -11,7 +11,9 @@ const app = !admin.apps.length
 
 //Implement Connection to stripe
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
+
+let endpointSecret;
+endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const fulfilOrder = async (session) => {
   /* console.log("fulfilling order", session);*/
@@ -35,13 +37,15 @@ const fulfilOrder = async (session) => {
     });
 };
 
-export default  async (req, res) => {
+export default async (req, res) => {
+  let event;
+  console.log(req);
   if (req.method === "POST") {
     const requestBuffer = await buffer(req);
     const payload = requestBuffer.toString();
     const signature = req.headers["stripe-signature"];
     console.log(payload);
-    let event;
+
     if (endpointSecret) {
       // Verify that this event is from stripe
       try {
@@ -54,12 +58,16 @@ export default  async (req, res) => {
         console.log("ERROR", err.message);
         return res.status(400).send(`Webhook error: ${err.message}`);
       }
+    } else {
+      event = req.body.data.object;
+      console.log(event);
+      //eventType = req.body.type;
     }
 
     // Handle the checkout.session.completed event
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
-
+      console.log(event);
       //Fullfil the order
       return fulfilOrder(session)
         .then(() => res.status(200))

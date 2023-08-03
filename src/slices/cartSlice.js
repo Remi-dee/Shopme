@@ -1,8 +1,13 @@
+"use client";
 import { createSlice } from "@reduxjs/toolkit";
+import { useEffect } from "react";
 
+const persistedItems =
+  typeof window !== "undefined"
+    ? JSON.parse(localStorage.getItem("items"))
+    : null;
 const initialState = {
-  items: [],
-  
+  items: persistedItems || [],
 };
 
 export const cartSlice = createSlice({
@@ -11,6 +16,8 @@ export const cartSlice = createSlice({
   reducers: {
     addTocart: (state, action) => {
       state.items = [...state.items, action.payload];
+      console.log(state.items);
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
     removeFromCart: (state, action) => {
       const index = state.items.findIndex(
@@ -29,14 +36,13 @@ export const cartSlice = createSlice({
       }
 
       state.items = newCart;
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
-
-   
   },
 });
 
 //Here is how to make actions to the cart in this case add or remove cart
-export const { addTocart, removeFromCart,  } = cartSlice.actions;
+export const { addTocart, removeFromCart } = cartSlice.actions;
 
 //Selectors
 // Selector - Selector helps to pull item from the Global store slice

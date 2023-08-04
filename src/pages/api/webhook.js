@@ -16,7 +16,7 @@ let endpointSecret;
 endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const fulfilOrder = async (session) => {
-  /* console.log("fulfilling order", session);*/
+  console.log("fulfilling order", session);
 
   return app
     .firestore()
@@ -59,8 +59,8 @@ export default async (req, res) => {
         return res.status(400).send(`Webhook error: ${err.message}`);
       }
     } else {
-      event = req.body.data.object;
-      console.log(event);
+      // event = req.body.data.object;
+      // console.log(event);
       //eventType = req.body.type;
     }
 

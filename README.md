@@ -9,8 +9,9 @@ Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for pa
 ### Browse Products & Add to cart
 ![New shopme](https://github.com/Remi-dee/Shopme/assets/96704300/7033b760-0a09-4a67-8a95-67426864ae94)
 
-### Make Payment With Stripe
-![New shopme 2](https://github.com/Remi-dee/Shopme/assets/96704300/1464bcb6-3461-4d1d-9335-97f028b05e2f)
+### Make Payment With Stripe & return orders
+![Payment shopme](https://github.com/Remi-dee/Shopme/assets/96704300/f8067133-f2d9-4223-898c-37dc141d2f38)
+
 
 ## Features
 
@@ -27,12 +28,10 @@ Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for pa
  - [x] Filter products
 
  - [x] Checkout process with Stripe payment integration
+ - [x]  Order history and user profile management
        
 ## Post MVP
  - [ ] Manage cart (update quantities, remove items)
- 
- - [ ] Order history and user profile management
-
 - [ ] Product recommendations based on user preferences and browsing history
  Wishlist functionality
 - [ ] Product reviews and ratings

@@ -1,38 +1,111 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shopme App
+
+## Overview
+
+Shopme is a light weight amazon look like e-commerce website that provides users with the ability to explore products, add them to cart, and successfully complete the checkout process. Shopme aims to deliver a seamless shopping experience to users, allowing them to discover and purchase products with ease.
+Its built with Next.js, Tailwind CSS, Hero Icons, Firebase and Stripe API for payment integration. 
+
+## Demo
+### Browse Products & Add to cart
+![New shopme](https://github.com/Remi-dee/Shopme/assets/96704300/7033b760-0a09-4a67-8a95-67426864ae94)
+
+### Make Payment With Stripe & return orders
+![Payment shopme](https://github.com/Remi-dee/Shopme/assets/96704300/f8067133-f2d9-4223-898c-37dc141d2f38)
+
+
+## Features
+
+
+
+## MVP
+
+ - [x] User registration and authentication
+       
+ - [x] Browse and search products
+
+ - [x] Add products to the cart
+       
+ - [x] Filter products
+
+ - [x] Checkout process with Stripe payment integration
+ - [x]  Order history and user profile management
+       
+## Post MVP
+ - [ ] Manage cart (update quantities, remove items)
+- [ ] Product recommendations based on user preferences and browsing history
+ Wishlist functionality
+- [ ] Product reviews and ratings
+
+## App Flowchart
+![saveme4](https://github.com/Remi-dee/Shop-zone/assets/96704300/ad69298a-a88a-4866-bd68-6a5661a153f4)
+
 
 ## Getting Started
+### Test Sign in Account
+You can use the following test Gmail account to sign in to the app:
 
-First, run the development server:
+Email: testportfolio247@gmail.com
+Password: testpassword247
+Please note that this is a test account, and it is only meant for demonstration purposes. Do not use any personal or sensitive information with this account.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+To sign in with the test Gmail account, follow these steps:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Click on the "Sign In" button on the app's homepage and click on "Sign in with google".
+Enter the provided email (testportfolio247@gmail.com) and password (testportfolio247) in the google sign in form.
+Click on the "Sign In" button to log in to the app.
+Please ensure that you do not commit the test account credentials to version control systems like GitHub to avoid exposing the account to the public.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### To run the Shopme application locally, follow these steps:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Clone the repository to your local machine.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Install the required dependencies by running npm install in the project directory.
 
-## Learn More
+- Configure the environment variables for Stripe API integration.
 
-To learn more about Next.js, take a look at the following resources:
+- Create a .env.local file in the root directory and add the following variables:
+makefile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Copy code
+NEXT_PUBLIC_STRIPE_API_KEY=<your_stripe_api_key>
+- Replace <your_stripe_api_key> with your own Stripe API key.
+- Start the development server by running npm run dev in the project directory.
+- Open your web browser and navigate to http://localhost:3000 to access the Shopzone app.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technology Stack
+The Shopzone app is built using the following technologies:
 
-## Deploy on Vercel
+- Next.js: Next.js is a React framework that provides server-side rendering, automatic code splitting, and simple API routes. It allows for efficient development of scalable and optimized web applications.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides a set of pre-built CSS classes to rapidly build custom user interfaces. It offers a flexible and responsive design system for creating modern and visually appealing websites.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Hero Icons:Hero Icons is a set of free SVG icons designed by Steve Schoger. It provides a comprehensive collection of icons that can be easily customized and used in web projects.
+
+- Stripe API: Stripe API is a powerful payment processing platform that allows developers to integrate secure and reliable payment functionality into their applications. It provides a wide range of features for handling payments, subscriptions, and more.
+
+- Firebase Firestore : Firestore is a NoSQL serverless database with real-time notification capability, and together with the Firebase ecosystem it greatly simplifies common app development challenges while letting the application developer focus primarily on their business logic and user experience.
+
+#### The combination of Next.js, Tailwind CSS, Hero Icons, and Stripe API offers a robust and efficient tech stack for building a high-performance e-commerce application like Shopme.
+
+## Folder Structure
+The Shopzone repository follows a specific folder structure to organize the codebase effectively:
+- /components: Contains reusable React components used throughout the application.
+
+- /pages: Contains the Next.js pages that define the different routes and views of the application.
+
+- /public: Contains static assets, such as images and fonts, that are served by Next.js.
+
+- /styles: Contains global styles, utility classes, and Tailwind CSS configuration.
+
+- /lib: Contains utility functions, API clients, and other helper modules.
+
+
+  
+### API Integration
+
+The Shopzone app integrates with the Stripe API to handle payments. The following API endpoints are used:
+
+POST /api/checkout/session: Creates a new Stripe Checkout session for initiating the payment process.
+
+`POST /api/webhooks: a webhook enpoint that connects stripe to firebase fire store

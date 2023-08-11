@@ -2,12 +2,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 
-const persistedItems =
-  typeof window !== "undefined"
-    ? JSON.parse(localStorage.getItem("items"))
-    : null;
+// const persistedItems =
+//   typeof window !== "undefined"
+//     ? JSON.parse(localStorage.getItem("items"))
+//     : null;
 const initialState = {
-  items: persistedItems || [],
+  items:  [],
 };
 
 export const cartSlice = createSlice({

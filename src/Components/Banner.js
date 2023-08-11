@@ -20,7 +20,7 @@ function Banner() {
             showStatus={false}
             showIndicators={false}
             showThumbs={false}
-            interval={5000}
+             interval={5000}
           >
             <div>
               <Image

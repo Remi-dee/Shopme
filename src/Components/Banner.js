@@ -3,15 +3,15 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import BANNER from "../../public/assets/banner2.png";
 import ADVERT from "../../public/assets/advert.png";
-import { selectSearchString } from "@/slices/productSlice";
+import { selectCategory, selectSearchString } from "@/slices/productSlice";
 import { useSelector } from "react-redux";
 
 function Banner() {
   const searchString = useSelector(selectSearchString);
-
+  const category = useSelector(selectCategory);
   return (
     <div className="relative">
-      {!searchString && (
+      {!searchString && !category && (
         <>
           <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20" />
           <Carousel
@@ -20,7 +20,7 @@ function Banner() {
             showStatus={false}
             showIndicators={false}
             showThumbs={false}
-             interval={5000}
+            interval={5000}
           >
             <div>
               <Image

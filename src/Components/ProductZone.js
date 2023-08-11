@@ -25,7 +25,7 @@ function ProductZone({ products }) {
   return (
     <div
       className={`grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ${
-        !searchString && `md:-mt-52`
+        !searchString && !category && `md:-mt-52`
       } mx-auto`}
     >
       {categoryFilteredProducts
